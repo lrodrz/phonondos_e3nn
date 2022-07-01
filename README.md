@@ -49,6 +49,17 @@ At the command line, check your NVIDIA compiler version.
 
 If you do not have the `nvcc` command, this likely means you do not have CUDA installed and / or do not have a GPU. If this is the case, you will set `CUDA=cpu` in the be
 
+<span style="color:red">Note -LR: <strike> Ended up using a conda and cuda pair from from `https://www.codegrepper.com/code-examples/shell/setup+cuda+11.7+for+pytorch`
+ using 
+`conda install pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=10.0 -c pytorch`
+</span></strike>
+
+<span style='color:red'>Looks like what worked was 
+`https://varhowto.com/install-pytorch-1-5/` so use that instead.. -LR 
+</span>
+
+
+
 These versions **must** match before proceeding. If they match, at the command line set the variable `CUDA` to be `cu92`, `cu101`, or `cu102` to match your CUDA version or `cpu` to not install GPU dependences. For example, `CUDA=cu102` will set the CUDA variable to indicate you want to install a version for CUDA 10.2. `CUDA=cpu` will install torch-geometric without GPU dependencies. You can check that the variable `CUDA` is set by running `echo CUDA`.
 
 Then run the following.  
