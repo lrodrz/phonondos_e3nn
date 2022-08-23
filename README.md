@@ -36,6 +36,8 @@ Whenver you want to exit this environment (not right now because we want to inst
 First, let's install torch and torchvision.  
 ```pip install torch==1.5.1 torchvision==0.6.1```
 
+would only let me install version 1.7.1 from pip on mac zsh shell.
+
 Next we will install `torch-geometric` which is a versatile library for doing deep learning on graphs. Please first check the following **before** installing `torch-geometric`.
 
 In a python, check the CUDA version `torch` is using.  
