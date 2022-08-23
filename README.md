@@ -80,9 +80,17 @@ Then install `e3nn` at commit [`4653db57d0af05e1834e65b6da73fa26927824bc`](https
 <span style="color:red"> -LR **Note:** For the cloning of the specific commit of the repo what worked was actually forking the repository and then cloning into the local environment and finally using `$ git checkout 4653db57d0af05e1834e65b6da73fa26927824bc ` -LR</span>
 
 and finally `pymatgen` which we use to interact with the Materials Project API and manipulate crystal structure data. Installing `e3nn` will likely have already installed this package, but you can also install it with.  
+
 ```pip install pymatgen==2020.6.8```
 
-<span style="color:red">-LR **Note:** this worked instead of the pip install `conda install --channel conda-forge pymatgen` -LR</span>
+<span style="color:red">-LR **Note:** this worked instead of the pip install `conda install --channel conda-forge pymatgen` 
+
+also what worked was 
+
+```pip3 install mp-api```  
+
+For the new API!! from materials project.  
+-LR</span>
 
 ### Using a virtual environment with Jupyter
 In order to use this virtual environment in Jupyter you will need to add it to with `ipykernel`.  
@@ -97,12 +105,12 @@ Now, if you start a `jupyter notebook` outside this virtual enviroment (like in 
 This repository uses data from the Materials Project. To access the Materials Project dataset via pymatgen, you will need an API key which can obtain via https://www.materialsproject.org/dashboard. See https://pymatgen.org/pymatgen.ext.matproj.html for more details.
 
 One you have your Materials Project API key, you can add it to your pymatgen config file (~/.pmgrc.yaml) with the following command.  
-```pmg config --add PMG_MAPI_KEY YOUR_API_KEY```
+```pmg config --add PMG_MAPI_KEY <YOUR_API_KEY>```
 
 To download the data needed, run the following command  
 ```python download_mpcifs.py```  
 or to set the API key manually.  
-```python download_mpcifs.py YOUR_API_KEY```
+```python download_mpcifs.py <YOUR_API_KEY>```
 
 ### Other details
 These dependencies (also called requirements) can be found in `requirements.txt` but **installing with `pip install -r requirements.txt` will NOT work so please follow the instructions above**. If you run into problems installing `pytorch` or `torch-geometric`, please consult the official [pytorch](https://pytorch.org/get-started/previous-versions/) and [torch-geometric](https://github.com/rusty1s/pytorch_geometric#installation) installation instructions for relevant information.
