@@ -49,7 +49,7 @@ At the command line, check your NVIDIA compiler version.
 
 If you do not have the `nvcc` command, this likely means you do not have CUDA installed and / or do not have a GPU. If this is the case, you will set `CUDA=cpu` in the be
 
-<span style="color:red">Note -LR: <strike> Ended up using a conda and cuda pair from from `https://www.codegrepper.com/code-examples/shell/setup+cuda+11.7+for+pytorch`
+<span style="color:red">**Note:** -LR <strike> Ended up using a conda and cuda pair from from `https://www.codegrepper.com/code-examples/shell/setup+cuda+11.7+for+pytorch`
  using 
 `conda install pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=10.0 -c pytorch`
 </span></strike>
@@ -74,8 +74,13 @@ pip install torch-geometric==1.5.0
 Then install `e3nn` at commit [`4653db57d0af05e1834e65b6da73fa26927824bc`](https://github.com/e3nn/e3nn/tree/4653db57d0af05e1834e65b6da73fa26927824bc).  
 ```pip install git+git://github.com/e3nn/e3nn.git@4653db57d0af05e1834e65b6da73fa26927824bc```
 
+
+<span style="color:red"> -LR **Note:** For the cloning of the specific commit of the repo what worked was actually forking the repository and then cloning into the local environment and finally using `$ git checkout 4653db57d0af05e1834e65b6da73fa26927824bc ` -LR</span>
+
 and finally `pymatgen` which we use to interact with the Materials Project API and manipulate crystal structure data. Installing `e3nn` will likely have already installed this package, but you can also install it with.  
 ```pip install pymatgen==2020.6.8```
+
+<span style="color:red">-LR **Note:** this worked instead of the pip install `conda install --channel conda-forge pymatgen` -LR</span>
 
 ### Using a virtual environment with Jupyter
 In order to use this virtual environment in Jupyter you will need to add it to with `ipykernel`.  
